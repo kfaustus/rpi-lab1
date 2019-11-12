@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
+
+$medium: 500;
+$semiBold: 600;
+
+@mixin sm {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: 980px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/**************
+ * Navigation *
+ ***************/
+
+.navigation {
+    background: #3b3e41;
+}
+
+.navigationControls {
+    display: flex;
+}
+
+.navigationTitle {
+    flex-grow: 1;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: $medium;
+
+    @include sm {
+        font-size: 24px;
+        padding: 22px 37px;
+    }
+
+    @include md {
+        display: none;
+    }
+}
+
+.navigationOpener {
+    background: #202529;
+    padding: 9px 11px;
+
+    @include sm {
+        padding: 24px 21px;
+    }
+
+    @include md {
+        display: none;
+    }
+}
+
+.navigationOpenerIcon {
+    width: 15px;
+    height: 10px;
+
+    @include sm {
+        width: 31px;
+        height: 20px;
+    }
+}
+
+.navigationItems {
+    display: none;
+
+    @include md {
+        display: flex;
+        padding: 0 39px;
+    }
+}
+
+.navigationItem {
+    font-size: 15px;
+    font-weight: $medium;
+    text-decoration: none;
+    color: #ebebeb;
+    padding: 39px 14px;
+}
+
+.navigationItemHome {
+    color: #fff;
+}
+
+/*****************
+ * Header Banner *
+ *****************/
+
+.headerBanner {
+    padding: 57px 55px 50px 25px;
+    background: #0ca3b9 linear-gradient(119deg, #19b4c6 0%, #078aa4 100%);
+    color: #fff;
+
+    @include sm {
+        padding: 95px 125px 92px 52px;
+    }
+
+    @include md {
+        padding: 153px 190px 149px 80px;
+    }
+
+    @include lg {
+        padding: 163px 200px 158px 86px;
+    }
+}
+
+.headerBannerTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: $semiBold;
+
+    @include sm {
+        font-size: 39px;
+        margin-bottom: 40px;
+    }
+
+    @include md {
+        font-size: 60px;
+        margin-bottom: 60px;
+    }
+
+    @include lg {
+        font-size: 62px;
+        margin-bottom: 62px;
+    }
+}
+
+.headerBannerSubTitle {
+    color: rgba(#fff, .5);
+    font-size: 10px;
+
+    @include sm {
+        font-size: 22px;
+    }
+
+    @include md {
+        font-size: 34px;
+    }
+
+    @include lg {
+        font-size: 35px;
+    }
+}
+
+.headerBannerSubTitleArrow {
+    float: right;
+    width: 6px;
+    height: 10px;
+
+    @include sm {
+        width: 12px;
+        height: 20px;
+    }
+
+    @include md {
+        width: 15px;
+        height: 25px;
+    }
+
+    @include lg {
+        width: 19px;
+        height: 28px;
+    }
+}
+
+/***************
+ * Action area *
+ ***************/
+
+.actionArea {
+    display: flex;
+    background: #27212c;
+}
+
+.actionAreaText {
+    flex-grow: 1;
+    color: #9282a0;
+    padding: 31px 25px;
+    font-size: 10px;
+
+    @include sm {
+        padding: 63px 55px;
+        font-size: 20px;
+    }
+
+    @include md {
+        padding: 99px 84px 96px;
+        font-size: 30px;
+    }
+
+    @include lg {
+        padding: 103px 88px;
+        font-size: 31px;
+    }
+}
+
+.actionAreaArrow {
+    background: #a23480;
+    padding: 28px 30px;
+
+    @include sm {
+        padding: 60px 67px 59px;
+    }
+
+    @include md {
+        padding: 97px 105px 96px;
+    }
+
+    @include lg {
+        padding: 100px 110px 101px;
+    }
+}
+
+.actionAreaArrowIcon {
+    width: 9px;
+    height: 14px;
+
+    @include sm {
+        width: 16px;
+        height: 27px;
+    }
+
+    @include md {
+        width: 22px;
+        height: 35px;
+    }
+
+    @include lg {
+        width: 24px;
+        height: 39px;
+    }
+}
+
+/**********
+ * Slider *
+ **********/
+
+.slides {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+
+    @include md {
+        flex-direction: row;
+        align-content: normal;
+    }
+}
+
+%slide {
+    position: relative;
+
+    @include md {
+        flex: 1 1 0;
+    }
+}
+
+.stupidlyLargeArrowSlide {
+    @extend %slide;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5b0fa1;
+    height: calc(100vw * 0.8687);
+
+    @include md {
+        height: auto;
+    }
+}
+
+.stupidlyLargeArrow {
+    @include sm {
+        width: 35px;
+        height: 57px;
+    }
+
+    @include md {
+        width: 20px;
+        height: 31px;
+    }
+}
+
+.noiceBridgeSlide {
+    @extend %slide;
+}
+
+.womanInASweaterSlide {
+    @extend %slide;
+}
+
+.slideImage {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/**********
+ * Footer *
+ **********/
+
+.footer {
+    background: #ebebeb;
+    padding: 35px;
+
+    @include sm {
+        padding: 75px;
+    }
+}
+
+.footerTitle {
+    font-weight: $semiBold;
+    font-size: 19px;
+    color: #4f8ba2;
+
+    @include sm {
+        font-size: 30px;
+    }
+}
+
+.footerTexts {
+    font-size: 12px;
+    line-height: 1.58;
+    color: #515151;
+
+    @include sm {
+        font-size: 22px;
+    }
+
+    @include md {
+        font-size: 14px;
+        line-height: 1.8571;
+        column-count: 2;
+        column-gap: 70px;
+    }
+}
+
+.footerTextsMdOnly {
+    display: none;
+
+    @include md {
+        display: block;
+    }
+}
